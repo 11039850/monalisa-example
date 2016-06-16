@@ -15,3 +15,4 @@
 * 数据访问： src/main/java/test/dao/UserBlogDao.java  示例修改SQL语句，自动更新结果类: UserBlogs
 * 动态更新:  monalisa/sql/UserBlogDao.java  示例加载更新后的代码（修改后确认$VERSION$的值比  src/main/java/test/dao/UserBlogDao.java里面的大， 然后运行主程序）
 
+细节[可参考这里](https://github.com/11039850/monalisa-db/wiki/Dynamic%20Java%20Files) 
