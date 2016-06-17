@@ -6,13 +6,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<dependencies>
 		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>6.9.9</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>com.tsc9526</groupId>
 			<artifactId>monalisa-core</artifactId>
 			<version>1.0.4</version>
