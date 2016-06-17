@@ -18,7 +18,7 @@ import com.tsc9526.monalisa.core.query.Query;
  * 数据访问类
  */
 public class UserBlogDao {
-	final static long $VERSION$= 18L; //!!! 版本号, 每次保存为自动 +1
+	final static long $VERSION$= 19L; //!!! 版本号, 每次保存为自动 +1
 	
 	//@Select 注解指示该方法需自动生成结果类
 	//默认类名: Result + 方法名， 默认包名：数据访问类的包名+"."+数据访问类的名称(小写)
@@ -26,7 +26,8 @@ public class UserBlogDao {
 	@Select(name="test.result.UserBlogs") 
 	
 	//!!! 保存后会自动修改该函数的返回值为： List -> List<UserBlogs>
-	//第一次编写时，由于结果类还不存在, 为了保证能够编译正常, 函数的返回值 和 查询结果要用 泛值 替代, 保存后，插件会自动修改
+	//第一次编写时，由于结果类还不存在, 为了保证能够编译正常
+	//函数的返回值 和 查询结果要用 泛值 替代, 保存后，插件会自动修改.
 	//函数的返回值 和 查询结果 泛值的对应关系分三类如下：
 	//1. List查询
 	//public DataTable   method_name(...){... return Query.getList();   }    或
