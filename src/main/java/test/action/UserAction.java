@@ -1,13 +1,9 @@
 package test.action;
 
-import java.util.List;
-
-import test.TestDB;
 import test.dao.UserBlogDao;
 import test.result.UserBlogs;
 import test.testdb.User;
 
-import com.tsc9526.monalisa.core.query.DataMap;
 import com.tsc9526.monalisa.core.query.Query;
 
 /**
@@ -41,17 +37,5 @@ public class UserAction {
 			System.out.println(x);
 		}
 	}       
-	    
-	 
-	public List<DataMap>  selectUserBlogs(int user_id){
-		Query q=TestDB.DB.createQuery();
-		         
-		q.add(""+/**~{*/""
-				+ "SELECT a.id,a.name,b.title,b.content,b.create_time"
-				+ "\r\n	FROM user a, blog b "
-				+ "\r\n	WHERE a.id=b.user_id AND a.id=?		"
-		+ "\r\n"/**}*/, user_id);
-		 
-		return q.getList();
-	}
+
 }
