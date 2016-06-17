@@ -2,7 +2,7 @@
 
 
 
-package test.result;
+package test.dao.userblogdao;
  
 
 import test.testdb.User;
@@ -14,11 +14,11 @@ import com.tsc9526.monalisa.core.annotation.Column;
  
 /**
  * 
- * @see test.dao.UserBlogDao#selectUserBlogs(int)
+ * @see test.dao.UserBlogDao#selectUserBlogsOne(int)
  */
-public class UserBlogs implements java.io.Serializable{
-	private static final long serialVersionUID = 478337089611L;	
-	final static String  FINGERPRINT = "000003AA121F9EC7";
+public class ResultSelectUserBlogsOne implements java.io.Serializable{
+	private static final long serialVersionUID = 581786278876L;	
+	final static String  FINGERPRINT = "0000017836391B43";
 	  
 	 
 	
@@ -76,7 +76,7 @@ public class UserBlogs implements java.io.Serializable{
 * <li><B>remarks:</B> 用户ID
 */
 @Column(table=User.M.TABLE, jdbcType=4, name=User.M.id$name, key=User.M.id$key, auto=User.M.id$auto, notnull=User.M.id$notnull, length=User.M.id$length, value=User.M.id$value, remarks=User.M.id$remarks)
-	public UserBlogs setId(Integer id){
+	public ResultSelectUserBlogsOne setId(Integer id){
 		this.id = id;
 		return this;
 	}
@@ -89,7 +89,7 @@ public class UserBlogs implements java.io.Serializable{
 * <li><B>remarks:</B> 用户名称
 */
 @Column(table=User.M.TABLE, jdbcType=12, name=User.M.name$name, key=User.M.name$key, auto=User.M.name$auto, notnull=User.M.name$notnull, length=User.M.name$length, value=User.M.name$value, remarks=User.M.name$remarks)
-	public UserBlogs setName(String name){
+	public ResultSelectUserBlogsOne setName(String name){
 		this.name = name;
 		return this;
 	}
@@ -102,14 +102,14 @@ public class UserBlogs implements java.io.Serializable{
 * <li><B>remarks:</B> 博客标题
 */
 @Column(table=Blog.M.TABLE, jdbcType=12, name=Blog.M.title$name, key=Blog.M.title$key, auto=Blog.M.title$auto, notnull=Blog.M.title$notnull, length=Blog.M.title$length, value=Blog.M.title$value, remarks=Blog.M.title$remarks)
-	public UserBlogs setTitle(String title){
+	public ResultSelectUserBlogsOne setTitle(String title){
 		this.title = title;
 		return this;
 	}
 	
 	
 	
-	public UserBlogs setContent(String content){
+	public ResultSelectUserBlogsOne setContent(String content){
 		this.content = content;
 		return this;
 	}
@@ -122,7 +122,7 @@ public class UserBlogs implements java.io.Serializable{
 * <li><B>remarks:</B> 创建时间
 */
 @Column(table=Blog.M.TABLE, jdbcType=93, name=Blog.M.createTime$name, key=Blog.M.createTime$key, auto=Blog.M.createTime$auto, notnull=Blog.M.createTime$notnull, length=Blog.M.createTime$length, value=Blog.M.createTime$value, remarks=Blog.M.createTime$remarks)
-	public UserBlogs setCreateTime(java.util.Date createTime){
+	public ResultSelectUserBlogsOne setCreateTime(java.util.Date createTime){
 		this.createTime = createTime;
 		return this;
 	}

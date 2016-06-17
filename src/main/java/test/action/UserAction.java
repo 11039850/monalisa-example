@@ -16,6 +16,8 @@ import com.tsc9526.monalisa.core.query.Query;
 public class UserAction {
 	public static void main(String[] args)throws Exception {
 		UserAction action=new UserAction();
+		
+		action.saveLoad();
 		action.findUserBlogs(1);
 	}
 	
@@ -31,10 +33,12 @@ public class UserAction {
 	}
 	
 	public void saveLoad(){
-		new User().setName("zzgx").setStatus(1).save();
+		new User().setName("zzg123").setStatus(1).save();
+		
+		new User(1).load().setName("zzgUpdate").update();
 		
 		for(User x:User.WHERE().name.like("zzg%").status.in(0, 1).SELECT().select()){
-			System.out.println(x.toJson());
+			System.out.println(x);
 		}
 	}       
 	    
