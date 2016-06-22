@@ -24,6 +24,8 @@ public class UserAction {
 		action.testDBAction();
 		
 		action.testDynamic();
+		
+		action.testDataTable();
 	}
 	 
 	
@@ -135,6 +137,21 @@ public class UserAction {
 		r.WHERE()
 		 .field("name").like("jjyy%").field("status").ge(0)
 		 .delete();
+	}
+	
+	//DataTable 示例
+	public void testDataTable(){
+		DataTable<User>  users=User.SELECT().select();
+		
+		//SQL: SELECT name ,count(*) FROM _THIS_TABLE WHERE status >=0 GROUP BY name ORDER by name ASC
+		DataTable<DataMap> rs=users.select(
+				"name, count(*) as cnt"
+				,"status >= 0"
+				,"name asc"
+				, "name");
+		for(DataMap r:rs){
+			System.out.println(r.getString("name")+"="+r.getInt("cnt",0));
+		}
 	}
 
 }
