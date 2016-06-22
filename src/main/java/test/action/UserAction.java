@@ -141,17 +141,88 @@ public class UserAction {
 	
 	//DataTable 示例
 	public void testDataTable(){
+		//例子1: 从数据库查询出一个DataTable
 		DataTable<User>  users=User.SELECT().select();
+	 
+		DataTable<DataMap> results=users.select(
+		        "name, count(*) as cnt"
+		        ,"status >= 0"
+		        ,"name asc"
+		        ,"name");
+		 
+		//对TableData的过滤操作，执行效果和下面的SQL相同
+		//SELECT name ,count(*) FROM _THIS_TABLE 
+		//		      WHERE status >=0 
+		//		      GROUP BY name 
+		//		      ORDER by name ASC
+		System.out.println(results); 
 		
-		//SQL: SELECT name ,count(*) FROM _THIS_TABLE WHERE status >=0 GROUP BY name ORDER by name ASC
-		DataTable<DataMap> rs=users.select(
-				"name, count(*) as cnt"
-				,"status >= 0"
-				,"name asc"
-				, "name");
-		for(DataMap r:rs){
-			System.out.println(r.getString("name")+"="+r.getInt("cnt",0));
+		
+		
+		//例子2： 自定义数据
+		DataTable<DataMap> table = new DataTable<DataMap>();
+		 
+		//创建测试数据
+		for(int userId=1;userId<=6;userId++){
+			DataMap row = new DataMap();
+			row.put("user", userId);
+			row.put("area", "guangdong-"+(userId%2));
+			row.put("rank"  ,90+userId);
+			table.add(row);
 		}
+		
+		DataMap r=table.selectOne("count(*) as cnt", "rank  > 91", null, null);
+		System.out.println(r); 
+		//输出： {cnt=5}
+		
+		DataTable<DataMap> rs=table.select(
+				//字段选择: 支持常用的SQL聚合函数：sum/avg/count
+				//(null 或  "" 表示 *)
+				"area,count(*) as cnt"  
+				
+				//过滤条件: 支持AND, OR , 括号
+				//(null 或  "" 表示无条件)
+				, "rank>0"              
+				
+				//排序字段：ASC/DESC
+				//(null 或  "" 表示无指定的排序)
+				,"area ASC"  
+				
+				//分组语句：GROUP BY ... HAVING ...
+				//(null 或  "" 表示无分组)
+				,"area");
+		
+		System.out.println(rs);
+		//输出：[{area=guangdong-0, cnt=3}, {area=guangdong-1, cnt=3}]
+		
+		
+		
+		//例子3： Join
+		DataTable<User> t1 = new DataTable<User>();
+		t1.add(new User().setName("zzg1").setStatus(1));
+		t1.add(new User().setName("zzg2").setStatus(1));
+		t1.add(new User().setName("zzg3").setStatus(1));
+		
+		DataTable<DataMap> t2 = new DataTable<DataMap>();
+		for(int i=0;i<2;i++){
+			DataMap row = new DataMap();
+			row.put("name", "zzg"+i);
+			row.put("age"  ,16+i);  //新字段
+			t2.add(row);
+		}
+		  
+		DataTable<DataMap> ts=
+			t1.join(t2, "name","name")//用字段name连接2个表 t1,t2; 
+			.select(null, "age>0","age",null); //过滤 出age>0,并按age升序
+		System.out.println(ts);
+		/*输出如下：
+		  [
+		   {name=null, status=null,name1=zzg0, age=16},
+		   {name=zzg1, status=1  , name1=zzg1, age=17}
+		  ]
+		*/
 	}
+	
+	
 
 }
