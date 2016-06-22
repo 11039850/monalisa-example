@@ -17,3 +17,13 @@
 
 
 细节 [可参考这里](https://github.com/11039850/monalisa-db/wiki/Dynamic%20Java%20Files) 
+
+# Maven: 
+```xml
+	
+	<dependency>
+		<groupId>com.tsc9526</groupId>
+		<artifactId>monalisa-core</artifactId>
+		<version>1.1.1</version>
+	</dependency>
+``` 
