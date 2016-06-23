@@ -217,7 +217,6 @@ public class UserAction {
 		System.out.println(ts);
 		/*输出如下：
 		  [
-		   {name=null, status=null,name1=zzg0, age=16},
 		   {name=zzg1, status=1  , name1=zzg1, age=17}
 		  ]
 		*/
