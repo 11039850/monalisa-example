@@ -23,7 +23,7 @@
 	
 	<dependency>
 		<groupId>com.tsc9526</groupId>
-		<artifactId>monalisa-core</artifactId>
-		<version>1.1.2</version>
+		<artifactId>monalisa-orm</artifactId>
+		<version>1.6.0</version>
 	</dependency>
 ``` 

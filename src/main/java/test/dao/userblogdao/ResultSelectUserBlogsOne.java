@@ -5,11 +5,10 @@
 package test.dao.userblogdao;
  
 
+import test.testdb.Blog;
 import test.testdb.User;
 
-import test.testdb.Blog;
-
-import com.tsc9526.monalisa.core.annotation.Column;
+import com.tsc9526.monalisa.orm.annotation.Column;
 
  
 /**

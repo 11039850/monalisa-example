@@ -7,8 +7,8 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.tsc9526</groupId>
-			<artifactId>monalisa-core</artifactId>
-			<version>1.1.2</version>
+			<artifactId>monalisa-orm</artifactId>
+			<version>1.6.0</version>
 		</dependency>
 
 		<dependency>
@@ -29,7 +29,7 @@
 					<target>1.6</target>
 					<annotationProcessors>
 						<annotationProcessor>
-							com.tsc9526.monalisa.core.processor.DBAnnotationProcessor
+							com.tsc9526.monalisa.orm.processor.DBAnnotationProcessor
 						</annotationProcessor>
 					</annotationProcessors>
 				</configuration>
