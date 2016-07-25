@@ -5,12 +5,12 @@ import test.dao.UserBlogDao;
 import test.result.UserBlogs;
 import test.testdb.User;
 
-import com.tsc9526.monalisa.core.query.Page;
-import com.tsc9526.monalisa.core.query.Query;
-import com.tsc9526.monalisa.core.query.Tx;
-import com.tsc9526.monalisa.core.query.datatable.DataMap;
-import com.tsc9526.monalisa.core.query.datatable.DataTable;
-import com.tsc9526.monalisa.core.query.model.Record;
+import com.tsc9526.monalisa.orm.Page;
+import com.tsc9526.monalisa.orm.Query;
+import com.tsc9526.monalisa.orm.Tx;
+import com.tsc9526.monalisa.orm.datatable.DataMap;
+import com.tsc9526.monalisa.orm.datatable.DataTable;
+import com.tsc9526.monalisa.orm.model.Record;
 
 /**
  * 调用示例
