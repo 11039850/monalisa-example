@@ -18,7 +18,8 @@ import com.tsc9526.monalisa.orm.datatable.Page;
  * 数据访问类
  */
 public class UserBlogDao {
-	final static long $VERSION$= 27L; //!!! 版本号, 每次保存为自动 +1
+	final static long $VERSION$= 28L; //!!! 版本号, 每次保存为自动 +1
+
 	
 	//@Select 注解指示该方法需自动生成结果类
 	//默认类名: Result + 方法名， 默认包名：数据访问类的包名+"."+数据访问类的名称(小写)
