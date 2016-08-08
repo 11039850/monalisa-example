@@ -18,7 +18,7 @@ import com.tsc9526.monalisa.orm.datatable.DataMap;
  * 数据访问类
  */
 public class UserBlogDao {
-	final static long $VERSION$= 24L; //!!! 版本号, 每次保存为自动 +1
+	final static long $VERSION$= 26L; //!!! 版本号, 每次保存为自动 +1
 	
 	//@Select 注解指示该方法需自动生成结果类
 	//默认类名: Result + 方法名， 默认包名：数据访问类的包名+"."+数据访问类的名称(小写)
@@ -56,7 +56,7 @@ public class UserBlogDao {
 	@Select //自动产生结果类: test.dao.userblogdao.ResultSelectUserBlogsOne
 	public ResultSelectUserBlogsOne  selectUserBlogsOne(int user_id){ 
 		Query q=TestDB.DB.createQuery();
-		           
+		            
 		q.add(""+/**~{*/""
 				+ "SELECT a.id,a.name,b.title, concat(b.content,'x00x') as content,b.create_time"
 				+ "\r\n	FROM user a, blog b   "
