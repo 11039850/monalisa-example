@@ -19,11 +19,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="var" path="M2_REPO/com/tsc9526/monalisa-orm/1.6.0/monalisa-orm-1.6.0.jar" sourcepath="M2_REPO/com/tsc9526/monalisa-orm/1.6.0/monalisa-orm-1.6.0-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/com/google/code/gson/gson/2.3.1/gson-2.3.1.jar" sourcepath="M2_REPO/com/google/code/gson/gson/2.3.1/gson-2.3.1-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/net/sourceforge/csvjdbc/csvjdbc/1.0.28/csvjdbc-1.0.28.jar" sourcepath="M2_REPO/net/sourceforge/csvjdbc/csvjdbc/1.0.28/csvjdbc-1.0.28-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/mysql/mysql-connector-java/5.1.24/mysql-connector-java-5.1.24.jar" sourcepath="M2_REPO/mysql/mysql-connector-java/5.1.24/mysql-connector-java-5.1.24-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/log4j/log4j/1.2.16/log4j-1.2.16.jar" sourcepath="M2_REPO/log4j/log4j/1.2.16/log4j-1.2.16-sources.jar"/>
 	<classpathentry kind="src" path="target/generated-sources/annotations">
 		<attributes>
 			<attribute name="optional" value="true"/>

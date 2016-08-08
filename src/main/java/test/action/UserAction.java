@@ -5,11 +5,11 @@ import test.dao.UserBlogDao;
 import test.result.UserBlogs;
 import test.testdb.User;
 
-import com.tsc9526.monalisa.orm.Page;
 import com.tsc9526.monalisa.orm.Query;
 import com.tsc9526.monalisa.orm.Tx;
 import com.tsc9526.monalisa.orm.datatable.DataMap;
 import com.tsc9526.monalisa.orm.datatable.DataTable;
+import com.tsc9526.monalisa.orm.datatable.Page;
 import com.tsc9526.monalisa.orm.model.Record;
 
 /**
