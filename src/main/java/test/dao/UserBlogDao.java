@@ -18,7 +18,7 @@ import com.tsc9526.monalisa.orm.datatable.Page;
  * 数据访问类
  */
 public class UserBlogDao {
-	final static long $VERSION$= 28L; //!!! 版本号, 每次保存为自动 +1
+	final static long $VERSION$= 29L; //!!! 版本号, 每次保存为自动 +1
 
 	
 	//@Select 注解指示该方法需自动生成结果类
@@ -44,7 +44,7 @@ public class UserBlogDao {
 		Query q=TestDB.DB.createQuery();
 		           
 		q.add(""+/**~{*/""
-				+ "SELECT a.id, a.name,b.title, concat(b.content,'x00x') as content,b.create_time"
+				+ "SELECT a.id, a.name, b.title, concat(b.content,'x00x') as content,b.create_time"
 				+ "\r\n	FROM user a, blog b   "
 				+ "\r\n	WHERE a.id=b.user_id AND a.id=?"
 		+ "\r\n"/**}*/, user_id);
