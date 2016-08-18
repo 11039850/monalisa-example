@@ -2,7 +2,7 @@ package test.action;
 
 import test.TestDB;
 import test.dao.UserBlogDao;
-import test.result.UserBlogs;
+import test.dao.userblogdao.UserBlogs;
 import test.testdb.User;
 
 import com.tsc9526.monalisa.orm.Query;
@@ -13,33 +13,30 @@ import com.tsc9526.monalisa.orm.datatable.Page;
 import com.tsc9526.monalisa.orm.model.Record;
 
 /**
- * 调用示例
+ * Call example
  */
 public class UserAction {
-	public static void main(String[] args)throws Exception {
-		UserAction action=new UserAction();
-		
-		action.testDAO();
-		
-		action.testDBAction();
-		
-		action.testDynamic();
-		
-		action.testDataTable();
-	}
-	 
-	
-	//这里需要调用 Query.Create()来创建数据访问类. 不能直接调用new, 否则会丢失@Tx标记方法的事务特性， 以及数据访问类更新加载的特性
 	private UserBlogDao dao=Query.create(UserBlogDao.class);
 			
-	//调用DAO
+	/**
+	 * DAO call
+	 */
 	public void testDAO(){
 		for(UserBlogs x: dao.selectUserBlogs(1)){
 			System.out.println(x.getContent());
 		}
+		
+		Page<DataMap> rs1=dao.selectUserBlogsAsListMap(1, 5, 0);
+		for(DataMap m:rs1.getList()){
+			System.out.println(m);
+		}
+		
+		dao.updateUserBlog(1, 1);
 	}
 	
-	//基本数据库操作
+	/**
+	 * Basic database access
+	 */
 	public void testDBAction(){
 		//insert
 		new User().setName("zzg.zhou").setStatus(1).save();
@@ -117,7 +114,9 @@ public class UserAction {
 	}  
 	 
 	
-	//使用动态模型
+	/**
+	 * Dynamic Model: ActiveRecord
+	 */
 	public void testDynamic(){
 		Record r=new Record("user").use(TestDB.DB);
 		r.set("name", "jjyy").set("status",1)
@@ -139,30 +138,30 @@ public class UserAction {
 		 .delete();
 	}
 	
-	//DataTable 示例
+	/**
+	 * Some examples using class: DataTable 
+	 */
 	public void testDataTable(){
-		//例子1: 从数据库查询出一个DataTable
 		DataTable<User>  users=User.SELECT().select();
-	 
+		
+		//Example 1: Query the datatable, The effect is the same as the SQL below
+		//SELECT name ,count(*) FROM _THIS_TABLE 
+		//		      WHERE status >=0 
+		//		      GROUP BY name 
+		//		      ORDER by name ASC
 		DataTable<DataMap> results=users.select(
 		        "name, count(*) as cnt"
 		        ,"status >= 0"
 		        ,"name asc"
 		        ,"name");
-		 
-		//对TableData的过滤操作，执行效果和下面的SQL相同
-		//SELECT name ,count(*) FROM _THIS_TABLE 
-		//		      WHERE status >=0 
-		//		      GROUP BY name 
-		//		      ORDER by name ASC
 		System.out.println(results); 
 		
 		
 		
-		//例子2： 自定义数据
+		//Example 2：User defined datas
 		DataTable<DataMap> table = new DataTable<DataMap>();
 		 
-		//创建测试数据
+		//Create some test datas
 		for(int userId=1;userId<=6;userId++){
 			DataMap row = new DataMap();
 			row.put("user", userId);
@@ -170,34 +169,33 @@ public class UserAction {
 			row.put("rank"  ,90+userId);
 			table.add(row);
 		}
-		
 		DataMap r=table.selectOne("count(*) as cnt", "rank  > 91", null, null);
 		System.out.println(r); 
-		//输出： {cnt=5}
+		//Output： {cnt=5}
 		
 		DataTable<DataMap> rs=table.select(
-				//字段选择: 支持常用的SQL聚合函数：sum/avg/count
-				//(null 或  "" 表示 *)
+				//SELECT fields: support some SQL aggregate functions：sum/avg/count
+				//null or "": *
 				"area,count(*) as cnt"  
 				
-				//过滤条件: 支持AND, OR , 括号
-				//(null 或  "" 表示无条件)
+				//Filter: AND, OR 
+				//null or "": no filter
 				, "rank>0"              
 				
-				//排序字段：ASC/DESC
-				//(null 或  "" 表示无指定的排序)
+				//ORDER BY fields：ASC/DESC
+				//null or "": no ORDER BY
 				,"area ASC"  
 				
-				//分组语句：GROUP BY ... HAVING ...
-				//(null 或  "" 表示无分组)
+				//GROUP BY statement：GROUP BY ... HAVING ...
+				//null or "": no filter
 				,"area");
 		
 		System.out.println(rs);
-		//输出：[{area=guangdong-0, cnt=3}, {area=guangdong-1, cnt=3}]
+		//Output：[{area=guangdong-0, cnt=3}, {area=guangdong-1, cnt=3}]
 		
 		
 		
-		//例子3： Join
+		//Example 3： table join
 		DataTable<User> t1 = new DataTable<User>();
 		t1.add(new User().setName("zzg1").setStatus(1));
 		t1.add(new User().setName("zzg2").setStatus(1));
@@ -207,15 +205,15 @@ public class UserAction {
 		for(int i=0;i<2;i++){
 			DataMap row = new DataMap();
 			row.put("name", "zzg"+i);
-			row.put("age"  ,16+i);  //新字段
+			row.put("age"  ,16+i);  //"age" is a new field
 			t2.add(row);
 		}
 		  
 		DataTable<DataMap> ts=
-			t1.join(t2, "name","name")//用字段name连接2个表 t1,t2; 
-			.select(null, "age>0","age",null); //过滤 出age>0,并按age升序
+			t1.join(t2, "name","name")//Join table t1 and t2  on "name" 
+			.select(null, "age>0","age",null); //Filter: age>0; ORDER BY： age ASC
 		System.out.println(ts);
-		/*输出如下：
+		/*Output：
 		  [
 		   {name=zzg1, status=1  , name1=zzg1, age=17}
 		  ]

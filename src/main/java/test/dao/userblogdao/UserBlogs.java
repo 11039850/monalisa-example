@@ -1,4 +1,4 @@
-package test.result;
+package test.dao.userblogdao;
  
 
 import test.testdb.User;
@@ -6,13 +6,13 @@ import test.testdb.Blog;
 import com.tsc9526.monalisa.orm.annotation.Column;
  
 /**
- * Auto generated code by monalisa 1.6.1
+ * Auto generated code by monalisa 1.7.0
  *
  * @see test.dao.UserBlogDao#selectUserBlogs(int)
  */
 public class UserBlogs implements java.io.Serializable{
-	private static final long serialVersionUID = 478337089611L;	
-	final static String  FINGERPRINT = "000003B08DB4FEEF";
+	private static final long serialVersionUID = 516307517821L;	
+	final static String  FINGERPRINT = "00000217B2BAAAF2";
 	  
 	 
 	
@@ -20,7 +20,7 @@ public class UserBlogs implements java.io.Serializable{
 	* @Column
 	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> user&nbsp;<B>name:</B> id &nbsp;[<font color=red>KEY</font>|<font color=red>AUTO</font>|<font color=red>NOTNULL</font>]
 	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 10<br>
-	* <li><B>remarks:</B> 用户ID
+	* <li><B>remarks:</B> User's  ID
 	*/
 	@Column(table=User.M.TABLE, jdbcType=4, name=User.M.id$name, key=User.M.id$key, auto=User.M.id$auto, notnull=User.M.id$notnull, length=User.M.id$length, value=User.M.id$value, remarks=User.M.id$remarks)
 	private Integer id;	
@@ -30,7 +30,7 @@ public class UserBlogs implements java.io.Serializable{
 	* @Column
 	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> user&nbsp;<B>name:</B> name &nbsp;[<font color=red>NOTNULL</font>]
 	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 64<br>
-	* <li><B>remarks:</B> 用户名称
+	* <li><B>remarks:</B> user name
 	*/
 	@Column(table=User.M.TABLE, jdbcType=12, name=User.M.name$name, key=User.M.name$key, auto=User.M.name$auto, notnull=User.M.name$notnull, length=User.M.name$length, value=User.M.name$value, remarks=User.M.name$remarks)
 	private String name;	
@@ -40,7 +40,7 @@ public class UserBlogs implements java.io.Serializable{
 	* @Column
 	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> blog&nbsp;<B>name:</B> title &nbsp;[<font color=red>NOTNULL</font>]
 	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 64<br>
-	* <li><B>remarks:</B> 博客标题
+	* <li><B>remarks:</B> title of the blog
 	*/
 	@Column(table=Blog.M.TABLE, jdbcType=12, name=Blog.M.title$name, key=Blog.M.title$key, auto=Blog.M.title$auto, notnull=Blog.M.title$notnull, length=Blog.M.title$length, value=Blog.M.title$value, remarks=Blog.M.title$remarks)
 	private String title;	
@@ -54,7 +54,7 @@ public class UserBlogs implements java.io.Serializable{
 	* @Column
 	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> blog&nbsp;<B>name:</B> create_time &nbsp;[<font color=red>NOTNULL</font>]
 	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 19<br>
-	* <li><B>remarks:</B> 创建时间
+	* <li><B>remarks:</B> create time
 	*/
 	@Column(table=Blog.M.TABLE, jdbcType=93, name=Blog.M.createTime$name, key=Blog.M.createTime$key, auto=Blog.M.createTime$auto, notnull=Blog.M.createTime$notnull, length=Blog.M.createTime$length, value=Blog.M.createTime$value, remarks=Blog.M.createTime$remarks)
 	private java.util.Date createTime;	
@@ -67,7 +67,7 @@ public class UserBlogs implements java.io.Serializable{
 	* @Column
 	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> user&nbsp;<B>name:</B> id &nbsp;[<font color=red>KEY</font>|<font color=red>AUTO</font>|<font color=red>NOTNULL</font>]
 	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 10<br>
-	* <li><B>remarks:</B> 用户ID
+	* <li><B>remarks:</B> User's  ID
 	*/
 	@Column(table=User.M.TABLE, jdbcType=4, name=User.M.id$name, key=User.M.id$key, auto=User.M.id$auto, notnull=User.M.id$notnull, length=User.M.id$length, value=User.M.id$value, remarks=User.M.id$remarks)
 	public UserBlogs setId(Integer id){
@@ -80,7 +80,7 @@ public class UserBlogs implements java.io.Serializable{
 	* @Column
 	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> user&nbsp;<B>name:</B> name &nbsp;[<font color=red>NOTNULL</font>]
 	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 64<br>
-	* <li><B>remarks:</B> 用户名称
+	* <li><B>remarks:</B> user name
 	*/
 	@Column(table=User.M.TABLE, jdbcType=12, name=User.M.name$name, key=User.M.name$key, auto=User.M.name$auto, notnull=User.M.name$notnull, length=User.M.name$length, value=User.M.name$value, remarks=User.M.name$remarks)
 	public UserBlogs setName(String name){
@@ -93,7 +93,7 @@ public class UserBlogs implements java.io.Serializable{
 	* @Column
 	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> blog&nbsp;<B>name:</B> title &nbsp;[<font color=red>NOTNULL</font>]
 	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 64<br>
-	* <li><B>remarks:</B> 博客标题
+	* <li><B>remarks:</B> title of the blog
 	*/
 	@Column(table=Blog.M.TABLE, jdbcType=12, name=Blog.M.title$name, key=Blog.M.title$key, auto=Blog.M.title$auto, notnull=Blog.M.title$notnull, length=Blog.M.title$length, value=Blog.M.title$value, remarks=Blog.M.title$remarks)
 	public UserBlogs setTitle(String title){
@@ -113,7 +113,7 @@ public class UserBlogs implements java.io.Serializable{
 	* @Column
 	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> blog&nbsp;<B>name:</B> create_time &nbsp;[<font color=red>NOTNULL</font>]
 	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 19<br>
-	* <li><B>remarks:</B> 创建时间
+	* <li><B>remarks:</B> create time
 	*/
 	@Column(table=Blog.M.TABLE, jdbcType=93, name=Blog.M.createTime$name, key=Blog.M.createTime$key, auto=Blog.M.createTime$auto, notnull=Blog.M.createTime$notnull, length=Blog.M.createTime$length, value=Blog.M.createTime$value, remarks=Blog.M.createTime$remarks)
 	public UserBlogs setCreateTime(java.util.Date createTime){
@@ -129,7 +129,7 @@ public class UserBlogs implements java.io.Serializable{
 	* @Column
 	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> user&nbsp;<B>name:</B> id &nbsp;[<font color=red>KEY</font>|<font color=red>AUTO</font>|<font color=red>NOTNULL</font>]
 	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 10<br>
-	* <li><B>remarks:</B> 用户ID
+	* <li><B>remarks:</B> User's  ID
 	*/
 	@Column(table=User.M.TABLE, jdbcType=4, name=User.M.id$name, key=User.M.id$key, auto=User.M.id$auto, notnull=User.M.id$notnull, length=User.M.id$length, value=User.M.id$value, remarks=User.M.id$remarks)
 	public Integer getId(){
@@ -140,7 +140,7 @@ public class UserBlogs implements java.io.Serializable{
 	* @Column
 	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> user&nbsp;<B>name:</B> id &nbsp;[<font color=red>KEY</font>|<font color=red>AUTO</font>|<font color=red>NOTNULL</font>]
 	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 10<br>
-	* <li><B>remarks:</B> 用户ID
+	* <li><B>remarks:</B> User's  ID
 	* @param defaultValue  Return the default value if id is null.*/
 	@Column(table=User.M.TABLE, jdbcType=4, name=User.M.id$name, key=User.M.id$key, auto=User.M.id$auto, notnull=User.M.id$notnull, length=User.M.id$length, value=User.M.id$value, remarks=User.M.id$remarks)
 	public Integer getId(Integer defaultValue){
@@ -157,7 +157,7 @@ public class UserBlogs implements java.io.Serializable{
 	* @Column
 	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> user&nbsp;<B>name:</B> name &nbsp;[<font color=red>NOTNULL</font>]
 	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 64<br>
-	* <li><B>remarks:</B> 用户名称
+	* <li><B>remarks:</B> user name
 	*/
 	@Column(table=User.M.TABLE, jdbcType=12, name=User.M.name$name, key=User.M.name$key, auto=User.M.name$auto, notnull=User.M.name$notnull, length=User.M.name$length, value=User.M.name$value, remarks=User.M.name$remarks)
 	public String getName(){
@@ -168,7 +168,7 @@ public class UserBlogs implements java.io.Serializable{
 	* @Column
 	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> user&nbsp;<B>name:</B> name &nbsp;[<font color=red>NOTNULL</font>]
 	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 64<br>
-	* <li><B>remarks:</B> 用户名称
+	* <li><B>remarks:</B> user name
 	* @param defaultValue  Return the default value if name is null.*/
 	@Column(table=User.M.TABLE, jdbcType=12, name=User.M.name$name, key=User.M.name$key, auto=User.M.name$auto, notnull=User.M.name$notnull, length=User.M.name$length, value=User.M.name$value, remarks=User.M.name$remarks)
 	public String getName(String defaultValue){
@@ -185,7 +185,7 @@ public class UserBlogs implements java.io.Serializable{
 	* @Column
 	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> blog&nbsp;<B>name:</B> title &nbsp;[<font color=red>NOTNULL</font>]
 	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 64<br>
-	* <li><B>remarks:</B> 博客标题
+	* <li><B>remarks:</B> title of the blog
 	*/
 	@Column(table=Blog.M.TABLE, jdbcType=12, name=Blog.M.title$name, key=Blog.M.title$key, auto=Blog.M.title$auto, notnull=Blog.M.title$notnull, length=Blog.M.title$length, value=Blog.M.title$value, remarks=Blog.M.title$remarks)
 	public String getTitle(){
@@ -196,7 +196,7 @@ public class UserBlogs implements java.io.Serializable{
 	* @Column
 	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> blog&nbsp;<B>name:</B> title &nbsp;[<font color=red>NOTNULL</font>]
 	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 64<br>
-	* <li><B>remarks:</B> 博客标题
+	* <li><B>remarks:</B> title of the blog
 	* @param defaultValue  Return the default value if title is null.*/
 	@Column(table=Blog.M.TABLE, jdbcType=12, name=Blog.M.title$name, key=Blog.M.title$key, auto=Blog.M.title$auto, notnull=Blog.M.title$notnull, length=Blog.M.title$length, value=Blog.M.title$value, remarks=Blog.M.title$remarks)
 	public String getTitle(String defaultValue){
@@ -229,7 +229,7 @@ public class UserBlogs implements java.io.Serializable{
 	* @Column
 	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> blog&nbsp;<B>name:</B> create_time &nbsp;[<font color=red>NOTNULL</font>]
 	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 19<br>
-	* <li><B>remarks:</B> 创建时间
+	* <li><B>remarks:</B> create time
 	*/
 	@Column(table=Blog.M.TABLE, jdbcType=93, name=Blog.M.createTime$name, key=Blog.M.createTime$key, auto=Blog.M.createTime$auto, notnull=Blog.M.createTime$notnull, length=Blog.M.createTime$length, value=Blog.M.createTime$value, remarks=Blog.M.createTime$remarks)
 	public java.util.Date getCreateTime(){
@@ -240,7 +240,7 @@ public class UserBlogs implements java.io.Serializable{
 	* @Column
 	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> blog&nbsp;<B>name:</B> create_time &nbsp;[<font color=red>NOTNULL</font>]
 	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 19<br>
-	* <li><B>remarks:</B> 创建时间
+	* <li><B>remarks:</B> create time
 	* @param defaultValue  Return the default value if createTime is null.*/
 	@Column(table=Blog.M.TABLE, jdbcType=93, name=Blog.M.createTime$name, key=Blog.M.createTime$key, auto=Blog.M.createTime$auto, notnull=Blog.M.createTime$notnull, length=Blog.M.createTime$length, value=Blog.M.createTime$value, remarks=Blog.M.createTime$remarks)
 	public java.util.Date getCreateTime(java.util.Date defaultValue){
