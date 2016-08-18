@@ -1,7 +1,12 @@
 package test.action;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import test.TestDB;
 import test.dao.UserBlogDao;
+import test.dao.userblogdao.ResultSelectUserBlogsByList;
+import test.dao.userblogdao.ResultSelectUserBlogsOne;
 import test.dao.userblogdao.UserBlogs;
 import test.testdb.User;
 
@@ -30,6 +35,16 @@ public class UserAction {
 		for(DataMap m:rs1.getList()){
 			System.out.println(m);
 		}
+		
+		List<Integer> ids=new ArrayList<Integer>();
+		ids.add(1);
+		ids.add(2);
+		for(ResultSelectUserBlogsByList x:dao.selectUserBlogsByList(ids, 5, 0)){
+			System.out.println(x.getContent());
+		}
+		
+		ResultSelectUserBlogsOne one=dao.selectUserBlogsOne(1);
+		System.out.println(one.getContent());
 		
 		dao.updateUserBlog(1, 1);
 	}
