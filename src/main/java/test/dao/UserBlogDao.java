@@ -18,11 +18,11 @@ import com.tsc9526.monalisa.orm.datatable.Page;
 /**
  * Database access class <br><br>
  * 
- * To auto generate or update DTOs, you need install the eclipse plugin:<br>
+ * Auto generate DTOs, you need install the eclipse plugin:<br>
  * https://github.com/11039850/monalisa-orm/wiki/code-generator#eclipse-plugin
  */
 public class UserBlogDao {
-	final static long $VERSION$= 205L;  //Auto increase 1 after save
+	final static long $VERSION$= 207L;  //Auto increase 1 after save
 
 	@Select(name="test.dao.userblogdao.UserBlogs") //Auto Generate DTO class: test.dao.userblogdao.UserBlogs
 	public List<UserBlogs>  selectUserBlogs(int user_id){  // <--- List selectUserBlogs(int user_id)
@@ -52,7 +52,7 @@ public class UserBlogDao {
 	
 	@Select( //Auto generate DTO class: test.dao.userblogdao.ResultSelectUserBlogsByList
 		build=
-			 "List ids=new java.util.ArrayList(); \r\n"  // <--- init some parameters manual 
+			 "List ids=new java.util.ArrayList(); \r\n"  //Init some parameters manual 
 			+"ids.add(1); \r\n" 
 			+"int limit = 10; " 
 	)
