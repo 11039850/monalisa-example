@@ -12,7 +12,7 @@ import com.tsc9526.monalisa.orm.annotation.Column;
  */
 public class UserBlogs implements java.io.Serializable{
 	private static final long serialVersionUID = 516307517821L;	
-	final static String  FINGERPRINT = "00000217B2BAAAF2";
+	final static String  FINGERPRINT = "00000562BE883F62";
 	  
 	 
 	

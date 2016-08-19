@@ -1,6 +1,6 @@
 package test.dao;
 
-import java.util.List;
+import java.util.List; 
 
 import test.TestDB;
 import test.dao.userblogdao.ResultSelectUserBlogsByList;
@@ -18,13 +18,38 @@ import com.tsc9526.monalisa.orm.datatable.Page;
 /**
  * Database access class <br><br>
  * 
- * To auto generate or update DTOs, you need install the eclipse plugin:<br>
+ * To auto create or update DTOs, you need to install the eclipse plugin:<br>
  * https://github.com/11039850/monalisa-orm/wiki/code-generator#eclipse-plugin
  */
 public class UserBlogDao {
-	final static long $VERSION$= 207L;  //Auto increase 1 after save
+	final static long $VERSION$= 213L;  //Auto increase 1 after save
 
-	@Select(name="test.dao.userblogdao.UserBlogs") //Auto Generate DTO class: test.dao.userblogdao.UserBlogs
+	// @Select indicating that the method will generate a DTO
+    // Optional parameter: name 
+    //                     specifies the name of the class generated DTO, 
+    //                     if not specified, using the default: "Result" + the method's name
+    // Optional parameter: build
+    //                     a Java snippet for initializing the method parameters, 
+    //                     replace the default initialization rule
+    @Select(name = "test.dao.userblogdao.UserBlogs")
+
+    // !!! After saving, the plugin will automatically modify the return value: List -> List <UserBlogs>
+    //
+    // The first time, DTO class does not exist. In order to compile the code correctly,
+    // the return value and the result of the query must be replaced by a generic value. 
+    // If saved, the plugin will automatically modify the results to the corresponding values.
+    //
+    // Here is the corresponding relationship between the return value and the results of the query:
+    // 1. List query
+    // Public DataTable method_name (...) {... return query.getList ();} or
+    // Public List      method_name (...) {... return query.getList ();}
+    //
+    // 2. Page query
+    // Public Page      method_name (...) {... return query.Page ();   }
+    //
+    // 3. Single record
+    // Public Object    method_name (...) {... return query.getResult ();}
+    //
 	public List<UserBlogs>  selectUserBlogs(int user_id){  // <--- List selectUserBlogs(int user_id)
 		Query q=TestDB.DB.createQuery();
 		             
@@ -52,7 +77,7 @@ public class UserBlogDao {
 	
 	@Select( //Auto generate DTO class: test.dao.userblogdao.ResultSelectUserBlogsByList
 		build=
-			 "List ids=new java.util.ArrayList(); \r\n"  //manual init some parameters  
+			 "List ids=new java.util.ArrayList(); \r\n"  //Custom initialization parameters  
 			+"ids.add(1); \r\n" 
 			+"int limit = 10; " 
 	)

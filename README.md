@@ -1,8 +1,8 @@
 # monalisa-example
 
-For the first test run, please setup: 
+For the first test run, please set up: 
 
-1. Setup database from class: test.TestDB
+1. Set up database from class: test.TestDB
 2. Run test.InitDatabase to init test tables and generate model classes, then refresh(F5)
 3. Run test.TestMain 
  

@@ -17,6 +17,6 @@ import com.tsc9526.monalisa.orm.datasource.DBConfig;
 	,password="root"
 	,datasourceClass="C3p0DataSource" //Option: C3p0DataSource or DruidDataSource
 )
-public interface TestDB {                    
+public interface TestDB {                        
 	public static DBConfig DB=DBConfig.fromClass(TestDB.class);        
 }
