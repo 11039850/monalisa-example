@@ -9,7 +9,7 @@ For the first test run, please set up:
 For better experience, please install the eclipse plugin: <br>
 https://github.com/11039850/monalisa-orm/wiki/code-generator#eclipse-plugin
 
-[details](https://github.com/11039850/monalisa-orm/wiki/Dynamic%20Java%20Files) 
+[More about](https://github.com/11039850/monalisa-orm/wiki/Dynamic%20Java%20Files) 
 
 # Maven: 
 ```xml
