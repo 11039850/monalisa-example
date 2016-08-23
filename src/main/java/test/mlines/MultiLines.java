@@ -18,6 +18,15 @@ public class MultiLines {
 			+ "\r\nname=\"" +(name)+ "\" OR name=" +((name))+ " OR " +(("zzgA".equals(name)?"A":"B"))+ ""
 		+ "\r\n"/**}*/);
 		
+		System.out.println("------------------------------------------------------");
+		String regex=""+/**~!{*/""
+			+ "^\\s*\\w+(?:\\.{0,1}[\\w-]+)*@[a-zA-Z0-9]+(?:[-.][a-zA-Z0-9]+)*\\.[a-zA-Z]+\\s*$"
+		+ "\r\n"/**}*/.trim();
+		String[] emails={"zzg.zhou@qq.com","zzg.zhouqqq.com"};
+		for(String m:emails){
+			boolean valid=m.matches(regex);
+			System.out.println("email is "+(valid?"valid":"invalid")+": "+m);
+		}
 		
 		System.out.println("------------------------------------------------------");
 		System.out.println("    "+/**~{*/""
