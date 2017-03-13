@@ -1,8 +1,0 @@
-#Log the running SQL statements 
-DB.cfg.sql.debug=true
-
-### uncomment, redefine the database connection parameters
-#DB.cfg.url=jdbc:mysql://127.0.0.1:3306/test?allowMultiQueries=true
-#DB.cfg.username=root
-#DB.cfg.password=root
-#DB.cfg.datasourceClass=DruidDataSource

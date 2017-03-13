@@ -1,0 +1,37 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    	version="3.0">
+    
+	<display-name>example-web</display-name>
+	<!-- DB service, setup when Servlet less than 3.0 
+	
+	<listener>
+		<listener-class>com.tsc9526.monalisa.service.servlet.DestoryListener</listener-class>
+	</listener>
+	 
+	<servlet>
+		<servlet-name>dbs</servlet-name>
+		<servlet-class>com.tsc9526.monalisa.service.servlet.DbQueryHttpServlet</servlet-class>
+	 	
+		<init-param><param-name>DB1.name</param-name>       <param-value>db1</param-value>            </init-param>
+		<init-param><param-name>DB1.class</param-name>      <param-value>example.db.DB1</param-value> </init-param>
+		<init-param><param-name>DB1.auth.users</param-name> <param-value>none</param-value>              </init-param>
+		
+		<init-param><param-name>DB2.name</param-name>       <param-value>db2</param-value>               </init-param>
+		<init-param><param-name>DB2.username</param-name>   <param-value>root</param-value>              </init-param>
+		<init-param><param-name>DB2.password</param-name>   <param-value>root</param-value>              </init-param>
+		<init-param><param-name>DB2.url</param-name>        
+		    <param-value>jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=UTF-8</param-value>
+		</init-param>
+		
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>dbs</servlet-name>
+		<url-pattern>/dbs/*</url-pattern>
+	</servlet-mapping>
+	-->  
+ 
+</web-app>
