@@ -1,8 +1,8 @@
 package example.web.dto;
  
 
-import example.db.db1.TbUser;
-import example.db.db1.TbBlog;
+import example.db.testdb.TbUser;
+import example.db.testdb.TbBlog;
 import com.tsc9526.monalisa.orm.annotation.Column;
   
 /**
@@ -12,7 +12,7 @@ import com.tsc9526.monalisa.orm.annotation.Column;
  */
 public class UserBlog implements java.io.Serializable{
 	private static final long serialVersionUID = 491754995888L;	
-	final static String  FINGERPRINT = "000001D4EC107811";
+	final static String  FINGERPRINT = "000001D8AD546E54";
 	  
 	 
 	

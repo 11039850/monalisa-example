@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS `tb_user` (
   `name`     varchar(64)  NOT NULL                COMMENT 'user name',
   `passwd`   varchar(64)  DEFAULT '123456'        COMMENT 'user password' ,
   `fa`       varchar(64)  DEFAULT NULL            COMMENT 'file path.    #file{monalisa/tmp/fa}' ,
-  `fb`       varchar(64)  DEFAULT NULL            COMMENT 'var path.    #file{${dbcfg.file.path}/fb}' ,
+  `fb`       varchar(64)  DEFAULT NULL            COMMENT 'var path.     #file{${dbcfg.file.path}/fb}' ,
   `json`     varchar(64)  DEFAULT NULL            COMMENT 'json object.  #json{}',
   `address`  varchar(255) DEFAULT NULL            COMMENT 'java bean.    #json{example.db.vo.Address}',
   `phones`   varchar(255) DEFAULT NULL            COMMENT 'string array. #array{}',

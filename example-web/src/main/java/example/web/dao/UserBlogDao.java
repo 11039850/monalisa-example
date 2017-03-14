@@ -9,13 +9,12 @@ import com.tsc9526.monalisa.orm.annotation.Tx;
 import com.tsc9526.monalisa.tools.datatable.DataMap;
 import com.tsc9526.monalisa.tools.datatable.Page;
 
-import example.db.DB1;
-import example.db.db1.TbBlog;
-import example.db.db1.TbUser;
+import example.db.TestDB;
+import example.db.testdb.TbBlog;
+import example.db.testdb.TbUser;
 import example.web.dao.userblogdao.ResultSelectUserBlogsByList;
- 
+import example.web.dao.userblogdao.ResultSelectUserBlogsOne;
 import example.web.dto.UserBlog;
-import example.web.dao.userblogdao.ResultSelectUserBlogsOne; 
 
 /**
  * Database access class <br><br>
@@ -25,12 +24,12 @@ import example.web.dao.userblogdao.ResultSelectUserBlogsOne;
  */
 public class UserBlogDao {
 	//Auto increase 1 after saved
-	final static long $VERSION$= 111L;  
+	final static long $VERSION$= 119L;  
   
 	@Select(name = "example.web.dto.UserBlog")
 	//public List selectUserBlogs(int user_id){
 	public List<UserBlog> selectUserBlogs(int user_id){  
-		Query q=DB1.DB.createQuery();
+		Query q=TestDB.DB.createQuery();
 		                 
 		q.add(""+/**~{*/""
 				+ "SELECT a.id, a.name, b.title, concat(b.content,' ...') as content,b.create_time"
@@ -39,13 +38,13 @@ public class UserBlogDao {
 		+ "\r\n"/**}*/, user_id);     
 		
 		//return q.getList();
-		return q.getList(UserBlog.class);
+		return q.getList(UserBlog.class); 
 	} 
 	
 	@Select
 	//public Object selectUserBlogsOne(int user_id){
 	public ResultSelectUserBlogsOne  selectUserBlogsOne(int user_id){
-		Query q=DB1.DB.createQuery(); 
+		Query q=TestDB.DB.createQuery(); 
 		       
 		q.add(""+/**~!{*/""
 				+ "SELECT *           "
@@ -64,10 +63,10 @@ public class UserBlogDao {
 	) 
 	//public List selectUserBlogsByList(List<Integer> ids,int limit,int offset){
 	public List<ResultSelectUserBlogsByList>   selectUserBlogsByList(List<Integer> ids,int limit,int offset){ 
-		Query q=DB1.DB.createQuery();    
-		                    
+		Query q=TestDB.DB.createQuery();    
+		                      
 		q.add(""+/**~{*/""
-			+ "SELECT a.id,a.name,b.title, concat(b.content,'x00x') as content,b.create_time"
+			+ "SELECT a.name,b.title, concat(b.content,'x00x') as content,b.create_time"
 			+ "\r\n	FROM tb_user a, tb_blog b             "
 			+ "\r\n	WHERE a.id=b.user_id AND a.id             "
 		+ "\r\n"/**}*/.trim()).in(ids);  
@@ -86,11 +85,11 @@ public class UserBlogDao {
 	
 	//DataMap
 	public Page<DataMap>  selectUserBlogsAsListMap(int user_id,int limit,int offset){
-		Query q=DB1.DB.createQuery();
+		Query q=TestDB.DB.createQuery();
 		         
 		q.add(""+/**~{*/""
 				+ "SELECT a.id,a.name,b.title,b.content,b.create_time"
-				+ "\r\n	DB1 tb_user a, tb_blog b "
+				+ "\r\n	DTestDB tb_user a, tb_blog b "
 				+ "\r\n	WHERE a.id=b.user_id AND a.id=?		 "
 		+ "\r\n"/**}*/, user_id);
 		  
