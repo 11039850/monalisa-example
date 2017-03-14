@@ -1,8 +1,8 @@
 package example.web.dao.userblogdao;
  
 
-import example.db.db1.TbUser;
-import example.db.db1.TbBlog;
+import example.db.testdb.TbUser;
+import example.db.testdb.TbBlog;
 import com.tsc9526.monalisa.orm.annotation.Column;
   
 /**
@@ -11,20 +11,10 @@ import com.tsc9526.monalisa.orm.annotation.Column;
  * @see example.web.dao.UserBlogDao#selectUserBlogsByList(example.web.dao.List<Integer>, int, int)
  */
 public class ResultSelectUserBlogsByList implements java.io.Serializable{
-	private static final long serialVersionUID = 623960052995L;	
-	final static String  FINGERPRINT = "000002E9658D18D6";
+	private static final long serialVersionUID = 576553765467L;	
+	final static String  FINGERPRINT = "000002E94583EC3B";
 	  
 	 
-	
-	/**
-	* @Column
-	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> tb_user&nbsp;<B>name:</B> id &nbsp;[<font color=red>KEY</font>|<font color=red>AUTO</font>|<font color=red>NOTNULL</font>]
-	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 10<br>
-	* <li><B>remarks:</B> user ID
-	*/
-	@Column(table=TbUser.M.TABLE, jdbcType=4, name=TbUser.M.id$name, key=TbUser.M.id$key, auto=TbUser.M.id$auto, notnull=TbUser.M.id$notnull, length=TbUser.M.id$length, value=TbUser.M.id$value, remarks=TbUser.M.id$remarks)
-	private Integer id;	
-	
 	
 	/**
 	* @Column
@@ -61,19 +51,6 @@ public class ResultSelectUserBlogsByList implements java.io.Serializable{
 	
 	
 	
-	
-	
-	/**
-	* @Column
-	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> tb_user&nbsp;<B>name:</B> id &nbsp;[<font color=red>KEY</font>|<font color=red>AUTO</font>|<font color=red>NOTNULL</font>]
-	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 10<br>
-	* <li><B>remarks:</B> user ID
-	*/
-	@Column(table=TbUser.M.TABLE, jdbcType=4, name=TbUser.M.id$name, key=TbUser.M.id$key, auto=TbUser.M.id$auto, notnull=TbUser.M.id$notnull, length=TbUser.M.id$length, value=TbUser.M.id$value, remarks=TbUser.M.id$remarks)
-	public ResultSelectUserBlogsByList setId(Integer id){
-		this.id = id;
-		return this;
-	}
 	
 	
 	/**
@@ -124,35 +101,6 @@ public class ResultSelectUserBlogsByList implements java.io.Serializable{
 	
 	
 	 
-	
-	/**
-	* @Column
-	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> tb_user&nbsp;<B>name:</B> id &nbsp;[<font color=red>KEY</font>|<font color=red>AUTO</font>|<font color=red>NOTNULL</font>]
-	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 10<br>
-	* <li><B>remarks:</B> user ID
-	*/
-	@Column(table=TbUser.M.TABLE, jdbcType=4, name=TbUser.M.id$name, key=TbUser.M.id$key, auto=TbUser.M.id$auto, notnull=TbUser.M.id$notnull, length=TbUser.M.id$length, value=TbUser.M.id$value, remarks=TbUser.M.id$remarks)
-	public Integer getId(){
-		return this.id;		
-	}
-	
-	/**
-	* @Column
-	* <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>table:</B> tb_user&nbsp;<B>name:</B> id &nbsp;[<font color=red>KEY</font>|<font color=red>AUTO</font>|<font color=red>NOTNULL</font>]
-	* <li>&nbsp;&nbsp;&nbsp;<B>length:</B> 10<br>
-	* <li><B>remarks:</B> user ID
-	* @param defaultValue  Return the default value if id is null.*/
-	@Column(table=TbUser.M.TABLE, jdbcType=4, name=TbUser.M.id$name, key=TbUser.M.id$key, auto=TbUser.M.id$auto, notnull=TbUser.M.id$notnull, length=TbUser.M.id$length, value=TbUser.M.id$value, remarks=TbUser.M.id$remarks)
-	public Integer getId(Integer defaultValue){
-		Integer r=this.getId();
-		if(r==null){
-			r=defaultValue;
-		}		
-		
-		return r;
-	}
-	
-	
 	
 	/**
 	* @Column

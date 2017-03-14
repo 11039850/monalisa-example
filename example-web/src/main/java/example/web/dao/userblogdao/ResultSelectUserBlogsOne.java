@@ -1,13 +1,13 @@
 package example.web.dao.userblogdao;
  
 
-import example.db.db1.TbUser;
+import example.db.testdb.TbUser;
 import com.tsc9526.monalisa.tools.io.MelpFile;
 import java.io.File;
 import com.google.gson.JsonObject;
 import example.db.vo.Address;
 import example.db.vo.Group;
-import example.db.db1.TbBlog;
+import example.db.testdb.TbBlog;
 import com.tsc9526.monalisa.orm.annotation.Column;
 import com.tsc9526.monalisa.orm.datasource.DBConfig;
   
@@ -18,7 +18,7 @@ import com.tsc9526.monalisa.orm.datasource.DBConfig;
  */
 public class ResultSelectUserBlogsOne implements java.io.Serializable{
 	private static final long serialVersionUID = 1393591269749L;	
-	final static String  FINGERPRINT = "0000019D936EADA6";
+	final static String  FINGERPRINT = "000001A02F63AA93";
 	  
 	 
 	

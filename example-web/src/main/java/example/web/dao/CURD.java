@@ -2,9 +2,9 @@ package example.web.dao;
 
 import com.tsc9526.monalisa.tools.string.MelpString;
 
-import example.db.db1.TbBlog;
-import example.db.db1.TbUser;
-import example.db.db1.TbUser.Sex;
+import example.db.testdb.TbBlog;
+import example.db.testdb.TbUser;
+import example.db.testdb.TbUser.Sex;
 import example.db.vo.Address;
 import example.db.vo.Group;
 import example.web.dao.userblogdao.ResultSelectUserBlogsOne;
