@@ -7,5 +7,6 @@ Example using monalisa-orm & monalisa-service.
 * Startup your web server
 * Access: http://localhost:8080/your_web_app/dbs/testdb?method=HEAD 
 
+Click [monalisa-orm](https://github.com/11039850/monalisa-orm) and [monalisa-service](https://github.com/11039850/monalisa-service) for more. 
+
  
-Click [here](https://github.com/11039850/monalisa-orm) and [here](https://github.com/11039850/monalisa-service) for more. 
